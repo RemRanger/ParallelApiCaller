@@ -1,4 +1,5 @@
 ﻿using System.Configuration;
+using System.Diagnostics;
 using System.Net.Http.Headers;
 using System.Text.Json;
 
@@ -30,7 +31,17 @@ for (int i = 0; i < callCount; i++)
 Console.WriteLine();
 Console.WriteLine("Executing tasks...");
 Console.WriteLine();
+
+var stopwatch = new Stopwatch();
+stopwatch.Start();
+
 await Task.WhenAll(tasks);
+
+stopwatch.Stop();
+
+Console.WriteLine($"Executing tasks took {stopwatch.ElapsedMilliseconds / 1000} s.");
+Console.WriteLine();
+
 
 foreach (var group in tasks.GroupBy(t => $"{(int)t.Result.StatusCode} {t.Result.ReasonPhrase}").OrderBy(g => g.Key))
 {

@@ -16,6 +16,7 @@ var url = ConfigurationManager.AppSettings["base_url"] + "/" + ConfigurationMana
 var httpClient = new HttpClient();
 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
+Console.WriteLine($"Creating {callCount} tasks...");
 var tasks = new Task<HttpResponseMessage>[callCount];
 for (int i = 0; i < callCount; i++)
 {
@@ -24,13 +25,11 @@ for (int i = 0; i < callCount; i++)
     var httpContent = new StringContent(jsonN);
     httpContent!.Headers!.ContentType!.MediaType = "application/json";
 
-    Console.WriteLine($"Creating task {i}");
     tasks[i] = httpClient.PostAsync(url, httpContent);
 }
 
 Console.WriteLine();
 Console.WriteLine("Executing tasks...");
-Console.WriteLine();
 
 var stopwatch = new Stopwatch();
 stopwatch.Start();
@@ -39,13 +38,13 @@ await Task.WhenAll(tasks);
 
 stopwatch.Stop();
 
-Console.WriteLine($"Executing tasks took {stopwatch.ElapsedMilliseconds / 1000} s.");
+Console.WriteLine($"Executing tasks took {stopwatch.ElapsedMilliseconds / 1000.0:N3} s.");
 Console.WriteLine();
 
-
+Console.WriteLine("Results:");
 foreach (var group in tasks.GroupBy(t => $"{(int)t.Result.StatusCode} {t.Result.ReasonPhrase}").OrderBy(g => g.Key))
 {
-    Console.WriteLine($"#Tasks: {group.Count()}: {group.Key}");
+    Console.WriteLine($"Number of tasks: {group.Count()} --> Result: {group.Key}");
 }
 
 static async Task<string> GetToken()
@@ -86,6 +85,10 @@ static async Task<string> GetToken()
     catch (Exception ex)
     {
         Console.WriteLine($"Getting token failed: {ex.GetType()} - {ex.Message}");
+    }
+    finally
+    {
+        Console.WriteLine();
     }
 
     return token;

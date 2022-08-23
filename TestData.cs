@@ -1,70 +1,13 @@
 ﻿internal class TestData
 {
-    public const string BearerToken = "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJtQVlSQ2pIcERiUUUxRm1nVFVDdnA2Z0RKM2gzQlZmZEVUeVpCQWR1Sk44In0.eyJleHAiOjE2NjA1NjUwMDUsImlhdCI6MTY2MDU2MzIwNSwianRpIjoiZjYzMmJiZTEtOTBkZi00OWE4LTlhZjAtMjdmMzQzNTFmYmMwIiwiaXNzIjoiaHR0cHM6Ly90ZXN0LmpvaW4tZGF0YS5uZXQvYXV0aC9yZWFsbXMvZGF0YWh1YiIsImF1ZCI6WyJmYXJtZXItcmVtIiwiYWNjb3VudCJdLCJzdWIiOiJiYTU4ZmVlZC01ZDFlLTRlYmMtYTAwOS0zZGJkNGU5YzRhZmUiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJmYXJtZXItcmVtIiwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCBEYXRhc291cmNlX1Byb3ZpZGVycyBBcHBsaWNhdGlvbl9kZXZlbG9wZXJzIiwiYXBwbGljYXRpb25fY29tcGFueV9rZXlfdmFsdWUiOiI2NTkzMTA0MSIsImNsaWVudEhvc3QiOiIxMC4yNDQuMS4xIiwiY2xpZW50SWQiOiJmYXJtZXItcmVtIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJhcHBsaWNhdGlvbl9jb21wYW55X2ZpbHRlciI6dHJ1ZSwiYXBwbGljYXRpb25fY29tcGFueV9rZXlfc2NoZW1lIjoibmwua3ZrIiwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LWZhcm1lci1yZW0iLCJlbWJlZGRpbmciOnRydWUsImNvbXBhbnlfa2V5X3ZhbHVlIjoiNjU4NzU4NDIiLCJjbGllbnRBZGRyZXNzIjoiMTAuMjQ0LjEuMSIsImNvbXBhbnlfa2V5X3NjaGVtZSI6Im5sLmt2ayJ9.YedW82OiU4hR_5ybhrAziLQnmIJNhZctvm0jcIHmV-BF2Qyw9pDhA-4sTjycj1g81MU-2f5ZuXtpcgaS_aFCIv6I_aEruXQRO9uP9tLVaAo9eS5IISmAQmVIYOCXkXbcVu1jGPxBjpP7adYKkZHkT8y44LyxPR_kKip8BuO5U30wxn8zXCjZG_BEdI5fTJZcQYyMY3RxBzW_m2xeq0enlkaij_KCdlgV-udDFI6bMY87RohtwWX9rpkDzGSwl64bsRLqQ0neYFkJSxBs52Zt7KaOCezNca61UfM_aI-DuUYbWCtTOYAxt9kRyvw7SxSZJyfw0MRtdh5Wc-7p9Mg8UQ";
-
-    public const string Example_MilkingVisit_Gea_20220621_Id1 = "8143fd73-9d28-48a3-8623-df0191c8ce96";
-    public const string Example_MilkingVisit_Gea_20220621 = @"
-	        {
-		        ""eventType"": ""icarMilkingVisitEventResource"",
-		        ""@self"": null,
-		        ""meta"": {
-			        ""source"": ""gea"",
-			        ""sourceId"": ""8143fd73-9d28-48a3-8623-df0191c8ce96"",
-			        ""modified"": ""2022-06-15T09:07:53.010293+00:00"",
-			        ""created"": ""2022-06-15T09:07:52.791309+00:00"",
-			        ""creator"": ""PROCESSCONTROL"",
-			        ""validFrom"": null,
-			        ""changeable"": null,
-			        ""validTo"": null
-		        },
-		        ""id"": """ + Example_MilkingVisit_Gea_20220621_Id1 + @""",
-		        ""animal"": {
-			        ""identifierType"": ""icarAnimalIdentifierType"",
-			        ""id"": ""528000123456789"",
-			        ""scheme"": ""eu.animalId""
-		        },
-		        ""eventDateTime"": ""2022-06-15T09:01:32.869+00:00"",
-		        ""location"": {
-			        ""identifierType"": ""icarLocationIdentifierType"",
-			        ""id"": ""00000001234567"",
-			        ""scheme"": ""eu.farmId""
-		        },
-		        ""traitLabel"": null,
-		        ""responsible"": null,
-		        ""contemporaryGroup"": null,
-		        ""milkingStartingDateTime"": ""2022-06-15T09:01:32.869+00:00"",
-		        ""milkingDuration"": {
-			        ""unitCode"": ""SEC"",
-			        ""value"": 275
-		        },
-		        ""milkingVisitDuration"": {
-			        ""unitCode"": ""SEC"",
-			        ""value"": 439
-		        },
-		        ""milkingType"": ""Automated"",
-		        ""milkingMilkWeight"": {
-			        ""unitCode"": ""KGM"",
-			        ""value"": 9.84
-		        },
-		        ""goodMilkWeight"": {
-			        ""unitCode"": ""KGM"",
-			        ""value"": 9.84
-		        },
-		        ""milkingComplete"": true,
-		        ""milkingParlourUnit"": ""Boks "",
-		        ""milkingBoxNumber"": ""3"",
-		        ""milkingDeviceId"": ""3"",
-		        ""measureDeviceId"": ""3"",
-		        ""quarterMilkings"": null,
-		        ""animalMilkingSample"": [],
-		        ""milkCharacteristics"": [
-			        {
-				        ""characteristic"": ""AVGFLWR"",
-				        ""value"": ""2.14"",
-				        ""unit"": ""KGM"",
-				        ""measuringDevice"": null
-			        }
-		        ]
-	        }";
+    public static string[] RequestBodies =
+    {
+        @"{""eventType"":""icarMilkingVisitEventResource"",""@self"":null,""meta"":{""source"":""gea"",""sourceId"":""b3020654-f087-498a-aed1-55f33bfed166"",""modified"":""2022-06-07T16:46:55.234066+00:00"",""created"":""2022-06-07T16:46:55.056906+00:00"",""creator"":""PROCESSCONTROL"",""validFrom"":null,""changeable"":null,""validTo"":null},""id"":""b3020654-f087-498a-aed1-55f33bfed166"",""animal"":{""identifierType"":""icarAnimalIdentifierType"",""id"":""528000746246960"",""scheme"":""eu.animalId""},""eventDateTime"":""2022-06-07T16:38:37.278+00:00"",""location"":{""identifierType"":""icarLocationIdentifierType"",""id"":""6026088"",""scheme"":""eu.farmId""},""traitLabel"":null,""responsible"":null,""contemporaryGroup"":null,""milkingStartingDateTime"":""2022-06-07T16:38:37.278+00:00"",""milkingDuration"":{""unitCode"":""SEC"",""value"":436},""milkingVisitDuration"":{""unitCode"":""SEC"",""value"":557},""milkingType"":""Automated"",""milkingMilkWeight"":{""unitCode"":""KGM"",""value"":10.7},""goodMilkWeight"":{""unitCode"":""KGM"",""value"":10.7},""milkingComplete"":true,""milkingParlourUnit"":""Boks "",""milkingBoxNumber"":""1"",""milkingDeviceId"":""1"",""measureDeviceId"":""1"",""quarterMilkings"":null,""animalMilkingSample"":[],""milkCharacteristics"":[{""characteristic"":""AVGFLWR"",""value"":""1.47"",""unit"":""KGM"",""measuringDevice"":null}]}",
+        @"{""eventType"":""icarMilkingVisitEventResource"",""@self"":null,""meta"":{""source"":""gea"",""sourceId"":""164697fa-52ab-421d-8e25-18c48b09ba47"",""modified"":""2022-06-07T17:07:48.85007+00:00"",""created"":""2022-06-07T17:07:48.601447+00:00"",""creator"":""PROCESSCONTROL"",""validFrom"":null,""changeable"":null,""validTo"":null},""id"":""164697fa-52ab-421d-8e25-18c48b09ba47"",""animal"":{""identifierType"":""icarAnimalIdentifierType"",""id"":""528000676747881"",""scheme"":""eu.animalId""},""eventDateTime"":""2022-06-07T17:02:28.544+00:00"",""location"":{""identifierType"":""icarLocationIdentifierType"",""id"":""6026088"",""scheme"":""eu.farmId""},""traitLabel"":null,""responsible"":null,""contemporaryGroup"":null,""milkingStartingDateTime"":""2022-06-07T17:02:28.544+00:00"",""milkingDuration"":{""unitCode"":""SEC"",""value"":263},""milkingVisitDuration"":{""unitCode"":""SEC"",""value"":379},""milkingType"":""Automated"",""milkingMilkWeight"":{""unitCode"":""KGM"",""value"":8.07},""goodMilkWeight"":{""unitCode"":""KGM"",""value"":8.07},""milkingComplete"":true,""milkingParlourUnit"":""Boks "",""milkingBoxNumber"":""3"",""milkingDeviceId"":""3"",""measureDeviceId"":""3"",""quarterMilkings"":null,""animalMilkingSample"":[],""milkCharacteristics"":[{""characteristic"":""AVGFLWR"",""value"":""1.83"",""unit"":""KGM"",""measuringDevice"":null}]}",
+        @"{""eventType"":""icarMilkingVisitEventResource"",""@self"":null,""meta"":{""source"":""gea"",""sourceId"":""6820dc5d-ea53-44b0-8dfe-e7549e74a0c1"",""modified"":""2022-06-07T19:57:33.307495+00:00"",""created"":""2022-06-07T19:57:33.150287+00:00"",""creator"":""PROCESSCONTROL"",""validFrom"":null,""changeable"":null,""validTo"":null},""id"":""6820dc5d-ea53-44b0-8dfe-e7549e74a0c1"",""animal"":{""identifierType"":""icarAnimalIdentifierType"",""id"":""528000635649654"",""scheme"":""eu.animalId""},""eventDateTime"":""2022-06-07T19:52:15.054+00:00"",""location"":{""identifierType"":""icarLocationIdentifierType"",""id"":""6026088"",""scheme"":""eu.farmId""},""traitLabel"":null,""responsible"":null,""contemporaryGroup"":null,""milkingStartingDateTime"":""2022-06-07T19:52:15.054+00:00"",""milkingDuration"":{""unitCode"":""SEC"",""value"":265},""milkingVisitDuration"":{""unitCode"":""SEC"",""value"":377},""milkingType"":""Automated"",""milkingMilkWeight"":{""unitCode"":""KGM"",""value"":6.83},""goodMilkWeight"":{""unitCode"":""KGM"",""value"":6.83},""milkingComplete"":true,""milkingParlourUnit"":""Boks "",""milkingBoxNumber"":""2"",""milkingDeviceId"":""2"",""measureDeviceId"":""2"",""quarterMilkings"":null,""animalMilkingSample"":[],""milkCharacteristics"":[{""characteristic"":""AVGFLWR"",""value"":""1.54"",""unit"":""KGM"",""measuringDevice"":null}]}",
+        @"{""eventType"":""icarMilkingVisitEventResource"",""@self"":null,""meta"":{""source"":""gea"",""sourceId"":""9634581f-857a-4ae8-b73d-75e64f71f0c4"",""modified"":""2022-06-08T02:16:00.847298+00:00"",""created"":""2022-06-08T02:16:00.686814+00:00"",""creator"":""PROCESSCONTROL"",""validFrom"":null,""changeable"":null,""validTo"":null},""id"":""9634581f-857a-4ae8-b73d-75e64f71f0c4"",""animal"":{""identifierType"":""icarAnimalIdentifierType"",""id"":""528000635649654"",""scheme"":""eu.animalId""},""eventDateTime"":""2022-06-08T02:10:26.12+00:00"",""location"":{""identifierType"":""icarLocationIdentifierType"",""id"":""6026088"",""scheme"":""eu.farmId""},""traitLabel"":null,""responsible"":null,""contemporaryGroup"":null,""milkingStartingDateTime"":""2022-06-08T02:10:26.12+00:00"",""milkingDuration"":{""unitCode"":""SEC"",""value"":265},""milkingVisitDuration"":{""unitCode"":""SEC"",""value"":394},""milkingType"":""Automated"",""milkingMilkWeight"":{""unitCode"":""KGM"",""value"":6.94},""goodMilkWeight"":{""unitCode"":""KGM"",""value"":6.94},""milkingComplete"":true,""milkingParlourUnit"":""Boks "",""milkingBoxNumber"":""3"",""milkingDeviceId"":""3"",""measureDeviceId"":""3"",""quarterMilkings"":null,""animalMilkingSample"":[],""milkCharacteristics"":[{""characteristic"":""AVGFLWR"",""value"":""1.56"",""unit"":""KGM"",""measuringDevice"":null}]}",
+        @"{""eventType"":""icarMilkingVisitEventResource"",""@self"":null,""meta"":{""source"":""gea"",""sourceId"":""402d0722-5d5f-4608-8020-a34b5266b94e"",""modified"":""2022-06-08T04:10:30.036839+00:00"",""created"":""2022-06-08T04:10:29.863647+00:00"",""creator"":""PROCESSCONTROL"",""validFrom"":null,""changeable"":null,""validTo"":null},""id"":""402d0722-5d5f-4608-8020-a34b5266b94e"",""animal"":{""identifierType"":""icarAnimalIdentifierType"",""id"":""528000746246960"",""scheme"":""eu.animalId""},""eventDateTime"":""2022-06-08T04:02:09.489+00:00"",""location"":{""identifierType"":""icarLocationIdentifierType"",""id"":""6026088"",""scheme"":""eu.farmId""},""traitLabel"":null,""responsible"":null,""contemporaryGroup"":null,""milkingStartingDateTime"":""2022-06-08T04:02:09.489+00:00"",""milkingDuration"":{""unitCode"":""SEC"",""value"":431},""milkingVisitDuration"":{""unitCode"":""SEC"",""value"":560},""milkingType"":""Automated"",""milkingMilkWeight"":{""unitCode"":""KGM"",""value"":10.02},""goodMilkWeight"":{""unitCode"":""KGM"",""value"":10.02},""milkingComplete"":true,""milkingParlourUnit"":""Boks "",""milkingBoxNumber"":""3"",""milkingDeviceId"":""3"",""measureDeviceId"":""3"",""quarterMilkings"":null,""animalMilkingSample"":[],""milkCharacteristics"":[{""characteristic"":""AVGFLWR"",""value"":""1.39"",""unit"":""KGM"",""measuringDevice"":null}]}",
+        @"{""eventType"":""icarMilkingVisitEventResource"",""@self"":null,""meta"":{""source"":""gea"",""sourceId"":""6df3b5f0-4526-405f-9fd4-19a05f2d06cc"",""modified"":""2022-06-08T06:01:38.305116+00:00"",""created"":""2022-06-08T06:01:38.065486+00:00"",""creator"":""PROCESSCONTROL"",""validFrom"":null,""changeable"":null,""validTo"":null},""id"":""6df3b5f0-4526-405f-9fd4-19a05f2d06cc"",""animal"":{""identifierType"":""icarAnimalIdentifierType"",""id"":""276001305453895"",""scheme"":""eu.animalId""},""eventDateTime"":""2022-06-08T05:56:49.424+00:00"",""location"":{""identifierType"":""icarLocationIdentifierType"",""id"":""6026088"",""scheme"":""eu.farmId""},""traitLabel"":null,""responsible"":null,""contemporaryGroup"":null,""milkingStartingDateTime"":""2022-06-08T05:56:49.424+00:00"",""milkingDuration"":{""unitCode"":""SEC"",""value"":228},""milkingVisitDuration"":{""unitCode"":""SEC"",""value"":348},""milkingType"":""Automated"",""milkingMilkWeight"":{""unitCode"":""KGM"",""value"":12.93},""goodMilkWeight"":{""unitCode"":""KGM"",""value"":12.93},""milkingComplete"":true,""milkingParlourUnit"":""Boks "",""milkingBoxNumber"":""3"",""milkingDeviceId"":""3"",""measureDeviceId"":""3"",""quarterMilkings"":null,""animalMilkingSample"":[],""milkCharacteristics"":[{""characteristic"":""AVGFLWR"",""value"":""3.40"",""unit"":""KGM"",""measuringDevice"":null}]}",
+    };
 }
 

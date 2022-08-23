@@ -9,20 +9,26 @@ if (string.IsNullOrWhiteSpace(token))
     return;
 }
 
-var callCount = TestData.RequestBodies.Length;
+var bodyCount = TestData.RequestBodies.Length;
+var repeatCount = int.Parse(ConfigurationManager.AppSettings["RepeatCount"]!);
+var totalCount = bodyCount * repeatCount;
 
 var url = ConfigurationManager.AppSettings["base_url"] + "/" + ConfigurationManager.AppSettings["path_url"];
+Console.WriteLine($"URL: {url}");
+Console.WriteLine();
 
 var httpClient = new HttpClient();
 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-Console.WriteLine($"Creating {callCount} task{(callCount != 1 ? "s" : "")}...");
-var tasks = new Task<HttpResponseMessage>[callCount];
-for (int i = 0; i < callCount; i++)
+Console.WriteLine($"Creating {totalCount} task{(totalCount != 1 ? "s" : "")}...");
+var tasks = new Task<HttpResponseMessage>[totalCount];
+for (int i = 0; i < totalCount; i++)
 {
+    var bodyIndex = i % bodyCount;
     var id = Guid.NewGuid().ToString();
-    var jsonN = TestData.RequestBodies[i];
-    var httpContent = new StringContent(jsonN);
+    var body = TestData.RequestBodies[bodyIndex];
+    var newIdBody = body.Replace("<NewId>", id);
+    var httpContent = new StringContent(newIdBody);
     httpContent!.Headers!.ContentType!.MediaType = "application/json";
 
     tasks[i] = httpClient.PostAsync(url, httpContent);
@@ -65,6 +71,9 @@ static async Task<string> GetToken()
         var clientId = ConfigurationManager.AppSettings["client_id"]!;
         var clientSecret = ConfigurationManager.AppSettings["client_secret"]!;
         var grantType = ConfigurationManager.AppSettings["grant_type"]!;
+
+        Console.WriteLine($"Client ID: {clientId}");
+        Console.WriteLine($"Token URL: {tokenUrl}");
 
         var data = new[]
         {

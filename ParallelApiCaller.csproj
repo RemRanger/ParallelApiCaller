@@ -9,6 +9,8 @@
 
   <ItemGroup>
     <None Remove=".gitignore" />
+    <None Remove="App-Integration.config" />
+    <None Remove="App-Local.config" />
   </ItemGroup>
 
   <ItemGroup>
